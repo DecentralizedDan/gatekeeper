@@ -1,0 +1,145 @@
+# Gatekeeper - Binary Counting Educational Web App
+
+## Project Overview
+
+This is an educational web application that teaches users about logical gates and binary counting. The app provides an interactive learning experience for understanding binary number representation, from basic concepts to advanced topics like signed vs unsigned integers.
+
+## Technology Stack
+
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+), TypeScript
+- **Hosting**: Static website on GitHub Pages
+- **No backend required** - purely client-side application
+
+## Design Principles
+
+### Visual Style
+
+- **Simple, colorful, and engaging** design suitable for both adults and children
+- **Clean, modern interface** with intuitive user interactions
+- **Accessible design** with good contrast ratios and readable fonts
+- **Responsive layout** that works on desktop, tablet, and mobile devices
+- **Consistent color scheme** throughout the application
+
+### User Experience
+
+- **Progressive difficulty** - start simple and gradually increase complexity
+- **Immediate feedback** - visual cues for correct/incorrect answers
+- **Intuitive interactions** - click to toggle binary digits
+- **Clear visual hierarchy** - prominent display of current number and binary representation
+
+## Core Features
+
+### Number Display System
+
+- **Top section**: Shows the target decimal number (0-9 digits) as a "prompt"
+- **Middle section**: Displays binary representation with clickable 0s and 1s
+- **Bottom section**: Shows evaluation result and "Evaluate" button
+
+### Binary Digit Management
+
+- **Dynamic bit count**: Number of binary digits adjusts based on the target number
+- **Click to toggle**: Users can click any binary digit to change between 0 and 1
+- **Visual feedback**: Clear indication of current binary state
+
+### Evaluation System
+
+- **Real-time calculation**: Convert binary input to decimal
+- **Color-coded results**:
+  - Green for correct answers
+  - Red for incorrect answers
+- **Retry mechanism**: Users can continue trying until correct
+
+## Difficulty Progression
+
+The app follows this learning sequence:
+
+1. **Basic concepts**: 0, 1 (1-bit numbers)
+2. **Simple binary**: 2, 4 (2-3 bit numbers)
+3. **Medium complexity**: 10, 100 (4-7 bit numbers)
+4. **Advanced concepts**: 128, 256 (8-bit numbers)
+5. **Signed numbers**: -1, -10, -128 (introducing negative values)
+
+## Code Organization
+
+### File Structure
+
+```
+/
+├── index.html          # Main HTML file
+├── styles/
+│   ├── main.css        # Primary stylesheet
+│   └── components.css  # Component-specific styles
+├── scripts/
+│   ├── main.ts         # Main TypeScript file
+│   ├── binary.ts       # Binary conversion utilities
+│   ├── game.ts         # Game logic and state management
+│   └── ui.ts           # User interface interactions
+├── assets/
+│   └── images/         # Any visual assets
+└── README.md           # Project documentation
+```
+
+### TypeScript Guidelines
+
+- **Strict mode**: Enable all TypeScript strict checks
+- **Type safety**: Define interfaces for all data structures
+- **Modular design**: Separate concerns into different modules
+- **Error handling**: Graceful handling of edge cases
+
+### CSS Guidelines
+
+- **CSS Grid/Flexbox**: Use modern layout techniques
+- **CSS Custom Properties**: Define color palette and spacing as CSS variables
+- **Mobile-first**: Design for mobile devices first, then enhance for larger screens
+- **Smooth transitions**: Add subtle animations for better UX
+
+### JavaScript/TypeScript Guidelines
+
+- **ES6+ features**: Use modern JavaScript features (arrow functions, destructuring, etc.)
+- **Event delegation**: Efficient event handling for dynamic content
+- **State management**: Clear separation of application state and UI updates
+- **Error boundaries**: Handle potential errors gracefully
+
+## Accessibility Requirements
+
+- **Keyboard navigation**: All interactive elements must be keyboard accessible
+- **Screen reader support**: Proper ARIA labels and semantic HTML
+- **Color contrast**: Meet WCAG AA standards for text contrast
+- **Focus indicators**: Clear visual focus states for all interactive elements
+
+## Performance Considerations
+
+- **Minimal dependencies**: Keep external libraries to a minimum
+- **Efficient algorithms**: Optimize binary conversion and validation
+- **Lazy loading**: Load resources only when needed
+- **Responsive images**: Optimize any visual assets
+
+## Testing Strategy
+
+- **Cross-browser testing**: Ensure compatibility with major browsers
+- **Mobile testing**: Verify functionality on various screen sizes
+- **Accessibility testing**: Validate against accessibility standards
+- **User testing**: Gather feedback from target audience
+
+## Deployment
+
+- **GitHub Pages**: Configure for static site hosting
+- **Build process**: Compile TypeScript to JavaScript for production
+- **Asset optimization**: Minify CSS and JavaScript files
+- **Caching strategy**: Implement appropriate cache headers
+
+## Code Quality Standards
+
+- **Consistent formatting**: Use Prettier for code formatting
+- **Linting**: ESLint for JavaScript/TypeScript, Stylelint for CSS
+- **Comments**: Clear documentation for complex logic
+- **Naming conventions**: Descriptive variable and function names
+- **Error handling**: Comprehensive error handling and user feedback
+
+## Future Enhancements
+
+- **Sound effects**: Audio feedback for interactions
+- **Progress tracking**: Save user progress locally
+- **Hints system**: Provide helpful tips for difficult numbers
+- **Statistics**: Track user performance and learning patterns
+- **Additional number systems**: Extend to hexadecimal, octal, etc.
