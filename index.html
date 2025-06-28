@@ -3,85 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gatekeeper - Learn Binary Counting</title>
-    <meta
-      name="description"
-      content="Interactive educational web app for learning binary counting and logical gates"
-    />
+    <title>Gatekeeper - Binary Counting Educational App</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/components.css" />
   </head>
   <body>
-    <header class="app-header">
-      <h1>Gatekeeper</h1>
-      <p class="subtitle">Learn Binary Counting</p>
-    </header>
-
-    <main class="app-container">
-      <!-- Target Number Display -->
-      <section class="target-section" aria-labelledby="target-label">
-        <h2 id="target-label" class="target-label">
-          Convert this number to binary:
-        </h2>
-        <div class="target-number" id="target-number" aria-live="polite">0</div>
-      </section>
-
-      <!-- Binary Input Section -->
-      <section class="binary-section" aria-labelledby="binary-label">
-        <h3 id="binary-label" class="binary-label">
-          Click the digits to toggle between 0 and 1:
-        </h3>
+    <div class="container">
+      <!-- Top Section -->
+      <header class="top-section">
+        <div class="target-number-container">
+          <h1 class="target-number" id="target-number">0</h1>
+        </div>
+        <div class="progress-container">
+          <span class="progress-text" id="progress-text">Question 1 of 26</span>
+        </div>
         <div
-          class="binary-display"
-          id="binary-display"
-          role="group"
-          aria-label="Binary digits"
-        >
-          <!-- Binary digits will be generated here -->
-        </div>
-      </section>
-
-      <!-- Result Section -->
-      <section class="result-section" aria-labelledby="result-label">
-        <h3 id="result-label" class="result-label">Your result:</h3>
-        <div class="result-display" id="result-display" aria-live="polite">
-          <span class="result-text">Click Evaluate to check your answer</span>
-        </div>
-      </section>
-
-      <!-- Control Section -->
-      <section class="control-section">
-        <button
-          class="evaluate-btn"
-          id="evaluate-btn"
-          type="button"
-          aria-describedby="result-display"
-        >
-          Evaluate
-        </button>
-        <button
-          class="next-btn"
-          id="next-btn"
-          type="button"
+          class="signed-bit-explanation"
+          id="signed-bit-explanation"
           style="display: none"
         >
-          Next Number
-        </button>
-      </section>
-
-      <!-- Progress Section -->
-      <section class="progress-section" aria-label="Learning progress">
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
+          <p>
+            In signed binary, the leftmost bit is the sign bit. 0 means
+            positive, 1 means negative.
+          </p>
         </div>
-        <p class="progress-text" id="progress-text">Step 1 of 11</p>
-      </section>
-    </main>
+      </header>
 
-    <footer class="app-footer">
-      <p>An interactive way to learn binary counting and logical gates</p>
-    </footer>
+      <!-- Middle Section -->
+      <main class="middle-section">
+        <div class="binary-input-container">
+          <div class="binary-display" id="binary-display">
+            <!-- Binary digits will be dynamically created here -->
+          </div>
+        </div>
+      </main>
 
+      <!-- Bottom Section -->
+      <footer class="bottom-section">
+        <div class="result-display" id="result-display">
+          <p class="result-text">
+            Click binary digits to toggle between 0 and 1, then press Check
+          </p>
+        </div>
+        <div class="button-container">
+          <button class="check-button" id="check-button">Check</button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Completion Modal -->
+    <div class="modal-overlay" id="completion-modal" style="display: none">
+      <div class="modal-content">
+        <h2>🎉 Congratulations!</h2>
+        <p class="completion-quote" id="completion-quote">
+          Every complex problem has a simple solution - just like every number
+          can be represented with just 0s and 1s.
+        </p>
+        <button class="restart-button" id="restart-button">Restart Game</button>
+      </div>
+    </div>
+
+    <!-- Audio element for sound effects -->
+    <audio id="toggle-sound" preload="auto">
+      <source src="assets/audio/lightsaber.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Scripts -->
     <script type="module" src="scripts/main.js"></script>
   </body>
 </html>
